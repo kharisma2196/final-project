@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Profil Saya</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="asset/css/styleVALUEJS.css">
+</head>
+
+<body>
+	<nav class="container">
+		<div class="menu-mobile">
+			<!-- 2tambahkan -->
+			<a href="#" onclick="showMenu()">menu</a>
+		</div>
+		<ul id="menu">
+			<li><a href="/">HOME</a></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="experience.html">EXPERIENCES</a></li>
+			<li><a href="education.html">EDUCATION</a></li>
+			<li><a href="skills.html">SKILLS</a></li>
+			<li><a href="interest.html">INTEREST</a></li>
+			<li><a href="award.html">AWARD</a></li>
+		</ul>
+	</nav>
+
+	<section class="container">
+		<section id="box-profile" style="display: inline-block; height: fit-content; width: 100%; max-width: -webkit-fill-available;">
+			<div class="img-profile px-3" style="margin: 0;">
+				<img src="asset/image/female.png" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+				<!-- <div class="photo"
+					style="background-image: url(asset/image/download.jpeg)">
+				</div> -->
+			</div>
+			<div class="description px-3" style="margin: 0;">
+				<h1 id="pName">Kharisma</h1>
+				<p id="pRole" style="margin-bottom: 14px;">Frontend Developer, Penjahit</p>
+				<div>
+					<!-- <a href="#" class="button bg-blue" onclick="editForm()">Portfolio</a> -->
+					<a href="#input-form" class="button border-green">Hubungi</a>
+				</div>
+			</div>
+			<div class="information px-3" style="margin: 0;">
+				<table>
+					<tr>
+						<td style="padding-right: 10px; padding-bottom: 5px; padding-top: 5px;"><b>Nama</b></td>
+						<td class="text-gray">Kharisma</td>
+					</tr>
+					<tr>
+						<td style="padding-right: 10px; padding-bottom: 5px; padding-top: 5px;"><b>Usia</b></td>
+						<td class="text-gray">26 tahun</td>
+					</tr>
+					<tr>
+						<td style="padding-right: 10px; padding-bottom: 5px; padding-top: 5px;"><b>Lokasi</b></td>
+						<td class="text-gray">Pekanbaru</td>
+					</tr>
+					<tr>
+						<td style="padding-right: 10px; padding-bottom: 5px; padding-top: 5px;"><b>Pengalaman</b></td>
+						<td class="text-gray">1 tahun</td>
+					</tr>
+					<tr>
+						<td style="padding-right: 10px; padding-bottom: 5px; padding-top: 5px;"><b>Email</b></td>
+						<td class="text-gray">kharismadewiputri21@gmail.com</td>
+					</tr>
+				</table>
+
+				<!-- <div class="data">
+					<p class="field">Nama</p>
+					<p id="pAvailable" class="text-gray">Kharisma</p>
+				</div>
+				<div class="data">
+					<p class="field">Usia</p>
+					<p id="pAge" class="text-gray">26</p>
+				</div>
+				<div class="data">
+					<p class="field">Lokasi</p>
+					<p id="pLocation" class="text-gray">Pekanbaru</p>
+				</div>
+				<div class="data">
+					<p class="field">Pengalaman</p>
+					<p id="pExperience" class="text-gray">1 tahun</p>
+				</div>
+				<div class="data">
+					<p class="field">Email</p>
+					<p id="pEmail" class="text-gray">kharismadewiputri21@gmail.com</p>
+				</div> -->
+			</div>
+		</section>
+	</section>
+
+
+	<section id="input-form">
+		<form method="#" action="#">
+			<div class="form">
+				<label>Nama</label>
+				<input id="inpName" type="text" name="nama" placeholder="Masukkan nama anda">
+			</div>
+			<div class="form">
+				<label>Email</label>
+				<input id="inpEmail" type="email" name="email" placeholder="Masukkan email anda">
+			</div>
+			<div class="form">
+				<label>Pesan</label>
+				<textarea id="inpPesan" name="pesan" rows="3"></textarea>
+			</div>
+			<div class="form">
+				<input onclick="simpanForm()" type="submit" name="submit" value="SUBMIT" class="bg-green">
+			</div>
+		</form>
+	</section>
+
+	<!-- 4Pertama kita buat sebuah variabel formenu mengarah ke id inputform.
+            kemudian formenu kita panggil , kita ubah dan style dan display menjadi none.
+            lalu save - debug
+            "Halaman Form Hilang" 138-139
+
+            5Fungsiberikutnya seperti editform line144-157 dan simpanform line148-150
+            EditForm
+            buat logika pada code menggunakan if dg kondisi awal
+            formMenu style displaynya none maka akan diubah jadi block, selain itu pada else
+            maka tampilannya tetap none.
+            simpan - debug
+
+            6Selanjutnya pada line 164 - 172menampilkan nama masuk dalam form nama dsterusnya. 
+            caranya buat sebuah variable name kita ambil value dengan id yang sudah didefinisikan tadi cth pName, kemudian ambil innerhtml nya lalu
+            pada bagian input nama pada form dg nama id InpName. document.getelementby id
+            lalu ubah value menjadi name yang berasal dari variable yang sudah dibuat diatas. 
+            save - debug
+
+            QUIZ = lakukan untuk file selanjutnya. 
+            save-debug.
+        -->
+
+
+	<script>
+		var formMenu = document.getElementById("input-form");
+		formMenu.style.display = "none";
+
+		function editForm() {
+			if (formMenu.style.display === "none") {
+				formMenu.style.display = "block";
+			} else {
+				formMenu.style.display = "none";
+			}
+
+			var name = document.getElementById("pName").innerHTML;
+			var role = document.getElementById("pRole").innerHTML;
+			var available = document.getElementById("pAvailable").innerHTML;
+			var usia = document.getElementById("pAge").innerHTML;
+			var lokasi = document.getElementById("pLocation").innerHTML;
+			var experience = document.getElementById("pExperience").innerHTML;
+			var email = document.getElementById("pEmail").innerHTML;
+
+			document.getElementById("inpName").value = name;
+			document.getElementById("inpRole").value = role;
+			document.getElementById("inpAvailability").value = available;
+			document.getElementById("inpUsia").value = usia;
+			document.getElementById("inpLokasi").value = lokasi;
+			document.getElementById("inpYears").value = experience;
+			document.getElementById("inpEmail").value = email;
+
+		}
+
+		function simpanForm() {
+			alert('Terima kasih, kami akan menghubungi anda secepatnya')
+		}
+
+		function showMenu() {
+			var menu = document.getElementById("menu");
+			var box = document.getElementById("box-profile");
+
+			if (menu.style.display === "block") {
+				menu.style.display = "none";
+				box.style.paddingTop = "0px";
+			} else {
+				menu.style.display = "block";
+				box.style.paddingTop = "125px";
+			}
+		}
+	</script>
+
+
+
+
+
+
+
+</body>
+
+</html>

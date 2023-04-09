@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Profil Saya</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="asset/css/styleVALUEJS.css">
+</head>
+
+<body>
+	<nav class="container">
+		<div class="menu-mobile">
+			<!-- 2tambahkan -->
+			<a href="#" onclick="showMenu()">menu</a>
+		</div>
+		<ul id="menu">
+			<li><a href="/">HOME</a></li>
+			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="experience.html">EXPERIENCES</a></li>
+			<li><a href="education.html">EDUCATION</a></li>
+			<li><a href="skills.html">SKILLS</a></li>
+			<li><a href="interest.html">INTEREST</a></li>
+			<li><a href="award.html">AWARD</a></li>
+		</ul>
+	</nav>
+
+	<section class="container" style="text-align: center;">
+		<section id="box-profile"
+			style="display: inline-block; height: fit-content; width: 100%; max-width: -webkit-fill-available;">
+			<div class="img-profile about-profile px-3" style="margin: 0;">
+				<img src="asset/image/female.png" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+			</div>
+			<div class="information about-information px-3" style="margin: 0;">
+				<p class="text-gray" style="text-align: justify;">Saya merupakan seorang lulusan SMK dengan jurusan busana butik di Pekanbaru. Tapi dengan perkembangan zaman saat ini saya cukup tertarik untuk mempelajari dunia pemrograman yang mana sangat menjanjikan pada beberapa tahun belakangan ini.</p>
+			</div>
+		</section>
+	</section>
+
+	<script>
+		var formMenu = document.getElementById("input-form");
+		formMenu.style.display = "none";
+
+		function showMenu() {
+			var menu = document.getElementById("menu");
+			var box = document.getElementById("box-profile");
+
+			if (menu.style.display === "block") {
+				menu.style.display = "none";
+				box.style.paddingTop = "0px";
+			} else {
+				menu.style.display = "block";
+				box.style.paddingTop = "125px";
+			}
+		}
+	</script>
+
+</body>
+
+</html>
